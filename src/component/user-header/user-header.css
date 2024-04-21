@@ -1,0 +1,20 @@
+.user-header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 0;
+}
+.user-header .container a {
+  background-color: var(--my-color);
+  cursor: pointer;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 10px;
+}
+.user-header .container img {
+  max-width: 70px;
+  min-width: 70px;
+  min-height: 70px;
+  max-height: 70px;
+  border-radius: 10px;
+}/*# sourceMappingURL=user-header.css.map */

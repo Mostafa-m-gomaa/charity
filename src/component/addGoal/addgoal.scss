@@ -1,0 +1,42 @@
+.add-goal{
+    width:65%;
+    direction: rtl;
+    form{
+        display: flex;
+        padding: 50px 0;
+        flex-direction: column;
+        gap: 15px;
+        div{
+            display: flex;
+            justify-content: space-between;
+            label{
+                width: 40%;
+            }
+        }
+        label{
+           
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            input , textarea , select { 
+                padding: 10px;
+                background-color: rgb(225, 233, 233);
+                border: none;
+                option{
+                    padding: 10px;
+                    background-color: rgb(225, 233, 233);
+                    border: none;
+                    border-radius: 0;
+                }
+            }
+          
+         
+        }
+        button{
+            background-color: var(--my-color);
+            width: 150px;
+            border-radius: 0;
+            font-size: 17px;
+        }
+    }
+}

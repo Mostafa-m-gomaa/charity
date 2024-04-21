@@ -1,0 +1,144 @@
+.initiatives {
+  width: 70%;
+  direction: rtl;
+  padding: 15px 30px;
+}
+.initiatives .confirm {
+  color: white;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.781);
+  text-align: center;
+  padding: 15px;
+  border-radius: 10px;
+  z-index: 120;
+  width: 50%;
+}
+.initiatives .confirm .btns {
+  width: 50%;
+  display: flex;
+  justify-content: space-between;
+  margin: auto;
+  margin-top: 25px;
+}
+.initiatives .confirm .btns button {
+  width: 40%;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 17px;
+  color: white;
+}
+.initiatives .confirm .btns .yes {
+  background-color: red;
+}
+.initiatives .confirm .btns .no {
+  background-color: green;
+}
+.initiatives .init-header {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 10px;
+}
+.initiatives .init-header a {
+  color: white;
+  background-color: var(--my-color);
+  padding: 10px 20px;
+  cursor: pointer;
+}
+.initiatives .in {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+  padding: 20px 0;
+}
+.initiatives .in .init-card {
+  background-color: #fdf2ff;
+  width: 30%;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow-x: hidden;
+  height: 280px;
+  max-height: 280;
+}
+.initiatives .in .init-card .title, .initiatives .in .init-card .desc {
+  color: #38174c;
+}
+.initiatives .in .init-card .title {
+  font-size: 15px;
+  font-weight: bold;
+  align-items: center;
+  padding: 10px;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  width: 90%;
+}
+.initiatives .in .init-card .title .points {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  cursor: pointer;
+  transition: 0.2s;
+  padding: 10px;
+  border-radius: 50%;
+  position: relative;
+}
+.initiatives .in .init-card .title .points:hover .links-list {
+  top: 10px;
+}
+.initiatives .in .init-card .title .points:hover {
+  background-color: var(--my-color);
+}
+.initiatives .in .init-card .title .points div {
+  width: 3px;
+  height: 3px;
+  background-color: black;
+  border-radius: 50%;
+}
+.initiatives .in .init-card .title .points .links-list {
+  position: absolute;
+  background-color: white !important;
+  width: -moz-fit-content;
+  width: fit-content;
+  min-width: -moz-fit-content;
+  min-width: fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  border-radius: 0;
+  left: 28px;
+  top: -120px;
+  padding: 5px;
+  font-size: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: 0.3s;
+}
+.initiatives .in .init-card .title .points .links-list a, .initiatives .in .init-card .title .points .links-list button {
+  color: black;
+  width: 80px;
+  text-align: center;
+}
+.initiatives .in .init-card .title .points .links-list button {
+  background-color: red;
+  color: white;
+}
+.initiatives .in .init-card .desc {
+  font-size: 12px;
+  padding: 10px;
+}
+.initiatives .in .init-card .ath {
+  background-color: #38174c;
+  color: white;
+  font-weight: bold;
+  padding: 5px 0;
+  padding-right: 40px;
+  width: 100%;
+}/*# sourceMappingURL=init.css.map */

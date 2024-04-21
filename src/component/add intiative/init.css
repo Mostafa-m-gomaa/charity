@@ -1,0 +1,210 @@
+.initiative {
+  width: 65%;
+  direction: rtl;
+}
+.initiative input, .initiative textarea, .initiative select {
+  padding: 10px;
+  background-color: rgb(225, 233, 233);
+  border: none;
+}
+.initiative form {
+  display: flex;
+  padding: 50px 0;
+  flex-direction: column;
+  gap: 15px;
+}
+.initiative form div {
+  display: flex;
+  justify-content: space-between;
+}
+.initiative form div label {
+  width: 40%;
+}
+.initiative form .relational {
+  display: flex;
+  justify-content: space-between;
+}
+.initiative form .relational label {
+  width: 22%;
+}
+.initiative form .relational-goal {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.initiative form .relational-goal label {
+  width: 22%;
+}
+.initiative form .relational-goal .most {
+  width: 65% !important;
+}
+.initiative form .the-outputs {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 2px solid;
+  padding: 15px;
+}
+.initiative form .the-outputs label {
+  width: 22%;
+}
+.initiative form .the-outputs .add {
+  font-size: 35px;
+  cursor: pointer;
+  height: 28px;
+  padding: 5px 10px;
+  border-radius: 50%;
+  transition: 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.initiative form .the-outputs .add:hover {
+  background-color: var(--my-color);
+  color: white;
+}
+.initiative form label {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.initiative form label input, .initiative form label textarea, .initiative form label select {
+  padding: 10px;
+  background-color: rgb(225, 233, 233);
+  border: none;
+}
+.initiative form label input option, .initiative form label textarea option, .initiative form label select option {
+  padding: 10px;
+  background-color: rgb(225, 233, 233);
+  border: none;
+  border-radius: 0;
+}
+.initiative form button {
+  background-color: var(--my-color);
+  width: 150px;
+  border-radius: 0;
+  font-size: 17px;
+}
+.initiative form .fives {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  width: 100%;
+}
+.initiative form .fives input {
+  width: 80%;
+}
+.initiative form .fives div {
+  width: 15%;
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  flex-direction: row-reverse;
+  align-items: center;
+  font-weight: 700;
+}
+.initiative form .fives div img {
+  width: 20px;
+  height: 25px;
+}
+.initiative form .changing {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.initiative form .changing .inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  border: 1px solid;
+  padding: 15px;
+}
+.initiative form .changing .inputs .input {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+.initiative form .changing .inputs .input .labels {
+  display: flex;
+  flex-direction: column;
+  width: 85%;
+  gap: 15px;
+}
+.initiative form .changing .inputs .input .labels label {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-weight: 700;
+  font-size: 18px;
+}
+.initiative form .changing .inputs .input .labels label input {
+  width: 75%;
+}
+.initiative form .changing .inputs .input .add {
+  font-size: 35px;
+  cursor: pointer;
+  height: 28px;
+  padding: 5px 10px;
+  border-radius: 50%;
+  transition: 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.initiative form .changing .inputs .input .add:hover {
+  background-color: var(--my-color);
+  color: white;
+}
+.initiative form .fives-cont {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.initiative form .inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  border: 1px solid;
+  padding: 15px;
+}
+.initiative form .inputs .input {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+.initiative form .inputs .input .labels {
+  display: flex;
+  width: 85%;
+  gap: 15px;
+}
+.initiative form .inputs .input .labels label {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-weight: 700;
+  font-size: 18px;
+}
+.initiative form .inputs .input .labels label input {
+  width: 75%;
+}
+.initiative form .inputs .input .add {
+  font-size: 35px;
+  cursor: pointer;
+  height: 28px;
+  padding: 5px 10px;
+  border-radius: 50%;
+  transition: 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.initiative form .inputs .input .add:hover {
+  background-color: var(--my-color);
+  color: white;
+}
+.initiative form .file {
+  background-color: var(--gray);
+  padding: 20px;
+}/*# sourceMappingURL=init.css.map */

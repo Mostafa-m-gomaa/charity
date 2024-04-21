@@ -1,0 +1,151 @@
+.initiatives{
+    width:70%;
+    direction: rtl;
+    padding: 15px 30px;
+    .confirm {
+        color: white;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        background-color: rgba(0, 0, 0, 0.781);
+        text-align: center;
+        padding: 15px;
+        border-radius: 10px;
+        z-index: 120;
+        width: 50%;
+        // color: black;
+        .btns{
+            width: 50%;
+            display: flex;
+            justify-content: space-between;
+            margin: auto;
+            margin-top: 25px;
+            button{
+                width: 40%;
+                padding: 10px;
+                border-radius: 5px;
+                font-size: 17px;
+                color: white;
+            }
+            .yes{
+                background-color: red;
+            }
+            .no{
+                background-color: green;
+            }
+        }
+    }
+    .init-header{
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 10px;
+        a{
+            color: white;
+            background-color: var(--my-color);
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+    }
+    .in{
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        flex-wrap: wrap;
+        padding: 20px 0;
+        .init-card{
+            background-color: #fdf2ff;
+            width: 30%;
+           align-items: center;
+           display: flex;
+              flex-direction: column;
+                justify-content: space-between;
+                overflow-x: hidden;
+                height: 280px;
+                max-height: 280;
+            .title, .desc{
+              color: #38174c;
+            }
+            .title{
+                font-size: 15px;
+                font-weight: bold;
+                align-items: center;
+                padding: 10px;
+                display: flex;
+                flex-direction: row-reverse;
+                justify-content: space-between;
+                width: 90%;
+                .points{
+                    display: flex;
+                    flex-direction: column;
+                    gap: 3px;
+                    cursor: pointer;
+                   transition: 0.2s;
+                    padding: 10px;
+                    border-radius: 50%;
+                    position: relative;
+              
+                    &:hover .links-list {
+                      top: 10px;
+                    }
+                   
+                    &:hover{
+                        background-color:var(--my-color);
+                   
+                    }
+             
+                 
+                 
+                    div{
+                       
+             width: 3px;
+             height: 3px;
+             background-color: black;
+             border-radius: 50%;
+                    }
+                    .links-list {
+                        position: absolute;
+                        background-color: white !important;
+                        width: fit-content;
+                        min-width: fit-content;
+                        height: fit-content;
+                        border-radius: 0;
+                        left: 28px;
+                        top: -120px;
+                        padding: 5px;
+                        font-size: 12px;
+                        display: flex;
+                        flex-direction: column;
+                        gap: 10px;
+                        transition: 0.3s;
+                      
+                        a , button{
+                          color: black;
+                       width: 80px;
+                       text-align: center;
+                        }
+                        button{
+                            background-color: red;
+                            color: white;
+                        }
+                      }
+                }
+            }
+            .desc{
+                font-size: 12px;
+                padding: 10px;
+            }
+            .ath{
+                background-color:#38174c ;
+                color: white;
+                font-weight: bold;
+                padding: 5px 0;
+                padding-right: 40px;
+                // padding: 5px 40px;
+                width: 100%;
+            }
+        }
+    }
+}

@@ -1,0 +1,39 @@
+.add-goal {
+  width: 65%;
+  direction: rtl;
+}
+.add-goal form {
+  display: flex;
+  padding: 50px 0;
+  flex-direction: column;
+  gap: 15px;
+}
+.add-goal form div {
+  display: flex;
+  justify-content: space-between;
+}
+.add-goal form div label {
+  width: 40%;
+}
+.add-goal form label {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.add-goal form label input, .add-goal form label textarea, .add-goal form label select {
+  padding: 10px;
+  background-color: rgb(225, 233, 233);
+  border: none;
+}
+.add-goal form label input option, .add-goal form label textarea option, .add-goal form label select option {
+  padding: 10px;
+  background-color: rgb(225, 233, 233);
+  border: none;
+  border-radius: 0;
+}
+.add-goal form button {
+  background-color: var(--my-color);
+  width: 150px;
+  border-radius: 0;
+  font-size: 17px;
+}/*# sourceMappingURL=addgoal.css.map */

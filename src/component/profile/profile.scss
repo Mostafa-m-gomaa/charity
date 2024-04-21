@@ -1,0 +1,114 @@
+
+.mmm{
+    color: blue;
+    background-color: black;
+}
+.profile{
+    padding: 20px 0;
+    position: fixed;
+    border: 5px solid rgb(0, 0, 0);
+    border-radius: 20px;
+    width: 70%;
+    background-color: rgba(36, 39, 39, 0.712);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 25px;
+    .tit{
+        color: white;
+    }
+    .download{
+        background-color: var(--my-color) !important;
+        padding: 10px 20px;
+    }
+ 
+ 
+ 
+
+
+
+    .container{
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        .data{
+            width: 100%;
+            background-color: var(--my-color);
+            padding: 15px 0;
+            border-radius: 10px;
+            color: white;
+        }
+        .quiz-data{
+            background-color: var(--other-color);
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            padding: 15px 0;
+            border-radius: 10px;
+            width: 100%;
+            div{
+                background-color: white;
+                padding: 15x;
+                width: 15%;
+                text-align: center;
+                padding: 10px;
+                border-radius: 5px;
+                cursor: pointer;
+                transition: 0.2s;
+                &:hover{
+                    background-color: var(--other-color);
+                    color: rgb(255, 255, 255);
+                }
+
+            }
+        }
+        .keys{
+            background-color: var(--my-color);
+            padding: 15px 0;
+            border-radius: 10px;
+            width: 100%;
+            color: white;
+            .in-keys{
+                display: flex;
+                width: 80%;
+                margin: auto;
+                justify-content: center;
+                flex-wrap: wrap;
+                gap: 15px;
+                .key-card{
+                    border: 2px solid white;
+                    padding: 5px;
+                    border-radius: 5px;
+                    background-color: white;
+                    color: black;
+                    cursor: pointer;
+                    padding: 5px 10px;
+                    border-radius: 5px;
+                    transition: 0.2s;
+                    margin-bottom: 15px;
+
+                 
+                
+                    &:hover{
+                        background-color: var(--my-color);
+                        color: white;
+                    }
+                }
+            }
+        }
+    }
+    .right{
+        background-color: green;
+        color: white;
+    }
+    .wrong{
+        background-color: red;
+        color: white;
+    }
+}

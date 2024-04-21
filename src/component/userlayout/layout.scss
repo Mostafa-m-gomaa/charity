@@ -1,0 +1,21 @@
+.user-lay{
+    width: 100%;
+    min-height: 100vh;
+    .shape{
+        transform: skew(-36deg, 55deg);
+        background-color: #f3f3f3;
+        z-index: -1;
+        position: absolute;
+        right: -70px;
+        width: 500px;
+        border-radius: 20px;
+        height: 300px;
+        top: -130px;
+       
+      }
+      .content{display: flex;
+        width: 96%;
+        margin: auto;
+    justify-content: space-between;}
+    
+}

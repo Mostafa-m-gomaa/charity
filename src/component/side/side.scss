@@ -1,0 +1,59 @@
+.side{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 33%;
+    padding-top: 20px;
+
+    direction: rtl;
+    .goals{
+        width: 60%;
+        // float: right;
+        
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        background-color: white;
+        padding: 20px;
+        border-radius: 15px;
+        box-shadow: -1px 1px 10px 1px rgb(143, 141, 141);
+        
+        a{
+            direction: ltr;
+            display: flex;
+            width: 100%;
+            justify-content: flex-end;
+            gap: 20px;
+            align-items: center;
+            color: black;
+            
+        }
+    }
+    .side-shape{
+        background-color: #f1f9ff;
+        width: 100%;
+        height: 250px;
+        border-radius: 25px;
+        position: relative;
+        overflow: hidden;
+        .inside-1{
+            background-color: #f5dbf9;
+            height: 150px;
+            width: 150px;
+            border-radius: 50%;
+            position: absolute;
+            left: -50px;
+            top: -40px;
+        }
+        .inside-2{
+            background-color: #f2edfc;
+           
+            height: 80px;
+            width: 80px;
+            border-radius: 50%;
+            position: absolute;
+       bottom: 20px;
+       right: 60px;
+        }
+    }
+}

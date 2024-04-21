@@ -1,0 +1,225 @@
+.initiative{
+    width:65%;
+    direction: rtl;
+    input , textarea , select { 
+        padding: 10px;
+        background-color: rgb(225, 233, 233);
+        border: none;
+      
+    }
+    form{
+        display: flex;
+        padding: 50px 0;
+        flex-direction: column;
+        gap: 15px;
+        div{
+            display: flex;
+            justify-content: space-between;
+            label{
+                width: 40%;
+            }
+        }
+        .relational{
+            display: flex;
+            justify-content: space-between;
+            label{
+                width: 22%;
+            }
+        }
+        .relational-goal{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            label{
+                width: 22%;
+            }
+            .most{
+                width: 65% !important;
+            }
+      
+       
+       
+        }
+        .the-outputs{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border: 2px solid;
+            padding: 15px;
+            label{
+                width: 22%;
+            }
+            .add{
+                font-size: 35px;
+                cursor: pointer;
+              
+                height: 28px;
+                padding: 5px 10px;
+                border-radius: 50%;
+                transition: 0.2s;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                &:hover{
+                    background-color: var(--my-color);
+                    color: white;
+                }
+            }
+        }
+        label{
+           
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            input , textarea , select { 
+                padding: 10px;
+                background-color: rgb(225, 233, 233);
+                border: none;
+                option{
+                    padding: 10px;
+                    background-color: rgb(225, 233, 233);
+                    border: none;
+                    border-radius: 0;
+                }
+            }
+          
+         
+        }
+        button{
+            background-color: var(--my-color);
+            width: 150px;
+            border-radius: 0;
+            font-size: 17px;
+        }
+        .fives{
+            display: flex;
+            flex-direction: row-reverse;
+            justify-content: space-between;
+            width: 100%;
+            input{
+                width: 80%;
+            }
+            div{
+                width: 15%;
+                display: flex;
+                justify-content: flex-end;
+                gap: 10px;
+                flex-direction: row-reverse;
+                align-items: center;
+                font-weight: 700;
+                img{
+                    width: 20px;
+                    height: 25px;
+                }
+            }
+        }
+        .changing{
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+           
+            .inputs{
+                display: flex;
+                flex-direction: column;
+                gap: 15px;
+                border: 1px solid;
+                padding: 15px;
+                .input{
+                    display: flex;
+                    align-items: center;
+                    width: 100%;
+                  .labels{
+                    display: flex;
+                    flex-direction: column;
+                    width: 85%;
+                    gap: 15px;
+                    label{
+                        width: 100%;
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: space-between;
+                        font-weight: 700;
+                        font-size: 18px;
+                        input{
+                            width: 75%;
+                        }
+                    }
+                  }
+                  .add{
+                    font-size: 35px;
+                    cursor: pointer;
+                  
+                    height: 28px;
+                    padding: 5px 10px;
+                    border-radius: 50%;
+                    transition: 0.2s;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    &:hover{
+                        background-color: var(--my-color);
+                        color: white;
+                    }
+                }
+                }
+            }
+        }
+        .fives-cont{
+            display: flex;
+            flex-direction: column;
+            
+            gap: 15px;
+        }
+        .inputs{
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            border: 1px solid;
+            padding: 15px;
+            .input{
+                display: flex;
+                align-items: center;
+                width: 100%;
+              .labels{
+                display: flex;
+          
+                width: 85%;
+                gap: 15px;
+                label{
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    font-weight: 700;
+                    font-size: 18px;
+                    input{
+                        width: 75%;
+                    }
+                }
+              }
+              .add{
+                font-size: 35px;
+                cursor: pointer;
+              
+                height: 28px;
+                padding: 5px 10px;
+                border-radius: 50%;
+                transition: 0.2s;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                &:hover{
+                    background-color: var(--my-color);
+                    color: white;
+                }
+            }
+            }
+        }
+        .file{
+           
+            background-color: var(--gray);
+            padding: 20px;
+        }
+      
+    }
+}

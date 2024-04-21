@@ -1,0 +1,177 @@
+.admin{
+    width: 100%;
+    .update{
+        color: white;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        background-color: rgba(0, 0, 0, 0.781);
+        text-align: center;
+        padding: 15px;
+        border-radius: 10px;
+        z-index: 120;
+        width: 50%;
+        form{
+
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            input{
+                height: 25px;
+                padding: 4px;
+            }
+            button{
+                width: 100px;
+                margin: auto;
+                background-color: var(--my-color);
+            }
+        }
+    }
+    .confirm {
+        color: white;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        background-color: rgba(0, 0, 0, 0.781);
+        text-align: center;
+        padding: 15px;
+        border-radius: 10px;
+        z-index: 120;
+        width: 50%;
+        // color: black;
+        .btns{
+            width: 50%;
+            display: flex;
+            justify-content: space-between;
+            margin: auto;
+            margin-top: 25px;
+            button{
+                width: 40%;
+                padding: 10px;
+                border-radius: 5px;
+                font-size: 17px;
+                color: white;
+            }
+            .yes{
+                background-color: red;
+            }
+            .no{
+                background-color: green;
+            }
+        }
+    }
+    .shape{
+        transform: skew(-36deg, 55deg);
+        background-color: #f3f3f3;
+        z-index: -1;
+        position: absolute;
+        right: -100px;
+        width: 500px;
+        height: 300px;
+        top: -80px;
+       
+      }
+    .container{
+        padding: 10px;
+        .admin-head{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            a{
+                background-color: var(--my-color);
+                cursor: pointer;
+                color: white;
+                padding: 10px 15px;
+                border-radius: 10px;
+            }
+            img{
+                border-radius: 10px;
+            }
+        }
+        h2{
+            text-align: center;
+        }
+        h3{
+            text-align: right;
+        }
+        form{
+            display: flex;
+            // flex-direction: column;
+            gap: 15px;
+            flex-wrap: wrap;
+            width: 100%;
+            justify-content: center;
+            .sub-div{
+                width: 100%;
+                text-align: center;
+            }
+            button{
+                background-color: var(--my-color);
+                color: white;
+                padding: 10px 15px;
+                cursor: pointer;
+                border: none;
+                font-size: 20px;
+              
+            }
+            label{
+                display: flex;
+                width: 45%;
+                flex-direction: column;
+                gap: 10px;
+                flex-wrap: wrap;
+                direction: rtl;
+                input{
+                    padding: 10px;
+                    background-color: rgb(225, 233, 233);
+                    border: none;
+                }
+            }
+        }
+        .all-orgs{
+            display: flex;
+            width: 100%;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            .org{
+                display: flex;
+                flex-direction: column;
+                gap: 5px;
+                align-items: center;
+                background-color: var(--gray);
+                width: 20%;
+                border-radius: 10px;
+                overflow: hidden;
+                padding: 4px;
+                .btns{
+                    display: flex;
+                    justify-content: center;
+                    gap: 5px;
+                    flex-wrap: wrap;
+                    .pass{
+                        background-color: black;
+                    }
+                }
+                .delete{
+                    background-color: red;
+                }
+                .active{
+                    background-color: rgb(27, 212, 27);
+                }
+                .stop{
+                    background-color: rgb(228, 205, 0);
+                }
+                img{
+                    min-width:  100%;
+                    max-width:  100%;
+                    min-height: 120px;
+                    max-height: 120px;
+                }
+
+            }
+        }
+    }
+}

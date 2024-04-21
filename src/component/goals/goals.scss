@@ -1,0 +1,136 @@
+.goals{
+    width: 65%;
+   display: flex;
+    flex-direction: column;
+    gap: 70px;
+    .goals-header{
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        align-items: center;
+        a{
+            background-color: var(--my-color);
+            font-size: 16px;
+            color: white;
+            padding: 10px 15px;
+        }
+    }
+    .main-goals{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        .goals-side{
+           
+            width: 8%;
+            direction: rtl;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            font-weight: 800;
+            font-size: 20px;
+            cursor: pointer;
+            .num{
+                color: #e5e5e6;
+            }
+        }
+        .in-goals{
+            width: 90%;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            align-items:first baseline;
+            height: fit-content;
+          
+      
+            .goal-card{
+                width: 26%;
+                background-color: #fdf2ff;
+                padding: 15px;
+                // height: fit-content;
+                // max-height: fit-content;
+                height: 130px;
+                max-height: 130px;
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+                padding-bottom: 40px;
+                position: relative;
+                overflow: hidden;
+                justify-content: space-between;
+            
+                .row{
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                   
+                    .points{
+                        display: flex;
+                        flex-direction: column;
+                        gap: 3px;
+                        cursor: pointer;
+                       transition: 0.2s;
+                        padding: 10px;
+                        border-radius: 50%;
+                        position: relative;
+                  
+                        &:hover .links-list {
+                          top: 10px;
+                        }
+                       
+                        &:hover{
+                            background-color:var(--my-color);
+                       
+                        }
+                 
+                     
+                     
+                        div{
+                           
+                 width: 3px;
+                 height: 3px;
+                 background-color: black;
+                 border-radius: 50%;
+                        }
+                        .links-list {
+                            position: absolute;
+                            background-color: white !important;
+                            width: fit-content;
+                            min-width: fit-content;
+                            height: fit-content;
+                            border-radius: 0;
+                            left: 28px;
+                            top: -120px;
+                            padding: 5px;
+                            font-size: 12px;
+                            display: flex;
+                            flex-direction: column;
+                            gap: 10px;
+                            transition: 0.3s;
+                          
+                            a {
+                              color: black;
+                           width: 80px;
+                           text-align: center;
+                         
+                            
+                         
+                            }
+                          }
+                    }
+                    .sub-title{
+                        background-color: var(--my-color);
+                        color: white;
+                        padding: 5px 10px;
+                        border-radius: 30px;
+                    }
+                }
+              
+            }
+            
+        }
+    }
+}
+
+
