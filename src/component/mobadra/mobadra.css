@@ -1,54 +1,55 @@
-.initiative {
-  width: 65%;
+.mobadra {
+  width: 70%;
   direction: rtl;
+  padding: 15px 30px;
 }
-.initiative input, .initiative textarea, .initiative select {
+.mobadra input, .mobadra textarea, .mobadra select {
   padding: 10px;
   background-color: rgb(225, 233, 233);
   border: none;
 }
-.initiative form {
+.mobadra form {
   display: flex;
   padding: 50px 0;
   flex-direction: column;
   gap: 15px;
 }
-.initiative form div {
+.mobadra form div {
   display: flex;
   justify-content: space-between;
 }
-.initiative form div label {
+.mobadra form div label {
   width: 40%;
 }
-.initiative form .relational {
+.mobadra form .relational {
   display: flex;
   justify-content: space-between;
 }
-.initiative form .relational label {
+.mobadra form .relational label {
   width: 22%;
 }
-.initiative form .relational-goal {
+.mobadra form .relational-goal {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.initiative form .relational-goal label {
+.mobadra form .relational-goal label {
   width: 22%;
 }
-.initiative form .relational-goal .most {
+.mobadra form .relational-goal .most {
   width: 65% !important;
 }
-.initiative form .the-outputs {
+.mobadra form .the-outputs {
   display: flex;
   justify-content: space-between;
   align-items: center;
   border: 2px solid;
   padding: 15px;
 }
-.initiative form .the-outputs label {
+.mobadra form .the-outputs label {
   width: 17%;
 }
-.initiative form .the-outputs .add {
+.mobadra form .the-outputs .add {
   font-size: 35px;
   cursor: pointer;
   height: 28px;
@@ -59,42 +60,42 @@
   align-items: center;
   justify-content: center;
 }
-.initiative form .the-outputs .add:hover {
+.mobadra form .the-outputs .add:hover {
   background-color: var(--my-color);
   color: white;
 }
-.initiative form label {
+.mobadra form label {
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
-.initiative form label input, .initiative form label textarea, .initiative form label select {
+.mobadra form label input, .mobadra form label textarea, .mobadra form label select {
   padding: 10px;
   background-color: rgb(225, 233, 233);
   border: none;
 }
-.initiative form label input option, .initiative form label textarea option, .initiative form label select option {
+.mobadra form label input option, .mobadra form label textarea option, .mobadra form label select option {
   padding: 10px;
   background-color: rgb(225, 233, 233);
   border: none;
   border-radius: 0;
 }
-.initiative form button {
+.mobadra form button {
   background-color: var(--my-color);
   width: 150px;
   border-radius: 0;
   font-size: 17px;
 }
-.initiative form .fives {
+.mobadra form .fives {
   display: flex;
   flex-direction: row-reverse;
   justify-content: space-between;
   width: 100%;
 }
-.initiative form .fives input {
+.mobadra form .fives input {
   width: 80%;
 }
-.initiative form .fives div {
+.mobadra form .fives div {
   width: 15%;
   display: flex;
   justify-content: flex-end;
@@ -103,34 +104,34 @@
   align-items: center;
   font-weight: 700;
 }
-.initiative form .fives div img {
+.mobadra form .fives div img {
   width: 20px;
   height: 25px;
 }
-.initiative form .changing {
+.mobadra form .changing {
   display: flex;
   flex-direction: column;
   gap: 15px;
 }
-.initiative form .changing .inputs {
+.mobadra form .changing .inputs {
   display: flex;
   flex-direction: column;
   gap: 15px;
   border: 1px solid;
   padding: 15px;
 }
-.initiative form .changing .inputs .input {
+.mobadra form .changing .inputs .input {
   display: flex;
   align-items: center;
   width: 100%;
 }
-.initiative form .changing .inputs .input .labels {
+.mobadra form .changing .inputs .input .labels {
   display: flex;
   flex-direction: column;
   width: 85%;
   gap: 15px;
 }
-.initiative form .changing .inputs .input .labels label {
+.mobadra form .changing .inputs .input .labels label {
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -138,10 +139,10 @@
   font-weight: 700;
   font-size: 18px;
 }
-.initiative form .changing .inputs .input .labels label input {
+.mobadra form .changing .inputs .input .labels label input {
   width: 75%;
 }
-.initiative form .changing .inputs .input .add {
+.mobadra form .changing .inputs .input .add {
   font-size: 35px;
   cursor: pointer;
   height: 28px;
@@ -152,33 +153,33 @@
   align-items: center;
   justify-content: center;
 }
-.initiative form .changing .inputs .input .add:hover {
+.mobadra form .changing .inputs .input .add:hover {
   background-color: var(--my-color);
   color: white;
 }
-.initiative form .fives-cont {
+.mobadra form .fives-cont {
   display: flex;
   flex-direction: column;
   gap: 15px;
 }
-.initiative form .inputs {
+.mobadra form .inputs {
   display: flex;
   flex-direction: column;
   gap: 15px;
   border: 1px solid;
   padding: 15px;
 }
-.initiative form .inputs .input {
+.mobadra form .inputs .input {
   display: flex;
   align-items: center;
   width: 100%;
 }
-.initiative form .inputs .input .labels {
+.mobadra form .inputs .input .labels {
   display: flex;
   width: 85%;
   gap: 15px;
 }
-.initiative form .inputs .input .labels label {
+.mobadra form .inputs .input .labels label {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -186,10 +187,10 @@
   font-weight: 700;
   font-size: 18px;
 }
-.initiative form .inputs .input .labels label input {
+.mobadra form .inputs .input .labels label input {
   width: 75%;
 }
-.initiative form .inputs .input .add {
+.mobadra form .inputs .input .add {
   font-size: 35px;
   cursor: pointer;
   height: 28px;
@@ -200,11 +201,11 @@
   align-items: center;
   justify-content: center;
 }
-.initiative form .inputs .input .add:hover {
+.mobadra form .inputs .input .add:hover {
   background-color: var(--my-color);
   color: white;
 }
-.initiative form .file {
+.mobadra form .file {
   background-color: var(--gray);
   padding: 20px;
-}/*# sourceMappingURL=init.css.map */
+}/*# sourceMappingURL=mobadra.css.map */

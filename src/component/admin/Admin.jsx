@@ -5,6 +5,11 @@ import { AppContext } from '../../App';
 import { toast } from "react-toastify";
 import img from "../../assets/theLogo.png";
 import { Link, useNavigate } from 'react-router-dom';
+import AddState from './addState/AddState';
+import AddNational from './nationalGoal/NationalGoal';
+import Stage1 from './Stage1';
+import Stage2 from './Stage2';
+import Stage3 from './Stage3';
 
 const Admin = () => {
     const {route ,setLoader ,setLogin , login}=useContext(AppContext)
@@ -340,6 +345,12 @@ useEffect(()=>{
                 )
             })}
         </div>
+
+        <AddState />
+        <AddNational />
+        <Stage1 />
+        <Stage2 />
+        <Stage3 />
 
     </div>
    </div>

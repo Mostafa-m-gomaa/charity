@@ -8,6 +8,7 @@ import { Link } from 'react-router-dom'
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Profile from '../profile/Profile'
+import  BudgetVsPurchasesGraph  from '../chart/Chart'
 
 const Report = () => {
     const {route,setLoader,login,setLogin,token,setToken} = useContext(AppContext);
@@ -17,6 +18,7 @@ const Report = () => {
     const [kes,setKes]=useState([])
     const [initiatives, setInitiatives] = useState([])
     const [showDownload, setShowDownload] = useState(false)
+    const [budjet, setBudjet] = useState(0)
     const keys = [{
         value: "title" ,
         title: "العنوان"
@@ -37,10 +39,7 @@ const Report = () => {
     value:"image",
     title:"الصورة"
 },
-{
-    value:"google_sheet_link",
-    title:"رابط جوجل شيت"
-},
+
 {
     value:"strategy_type",
     title:"نوع الاستراتيجية"
@@ -128,6 +127,7 @@ const Report = () => {
     
 
     useEffect(() => {
+  
         fetch(`${route}/api/goals/${param.id}`,{
             headers:{
                 "Authorization":`Bearer ${sessionStorage.getItem("token")}`
@@ -148,6 +148,7 @@ const Report = () => {
        
         })
     },[])
+
 
   return (
   <div className="report">
@@ -200,8 +201,20 @@ const Report = () => {
         );
       })}
     </div>
+    
+    {initiatives.map((item,index) => {
+        return(
+          <div className="pars">
+
+<BudgetVsPurchasesGraph budget={item.budget} purchases={item.plan.map(plan => plan.cost)} />
+          </div>
+        )
+    }
+    )}
 
 
+
+    {/* <BudgetVsPurchasesGraph budget={1000} purchases={[200, 150, 300, 250]} /> */}
 
 
     

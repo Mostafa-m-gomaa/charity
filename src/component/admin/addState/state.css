@@ -1,0 +1,40 @@
+.add-state {
+  width: 100%;
+  margin: 100px 0;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.add-state form {
+  display: flex;
+  align-items: center;
+}
+.add-state form input {
+  width: 40%;
+  height: 25px;
+  border-radius: 4px;
+  padding: 2px;
+  font-size: 16px;
+}
+.add-state form select {
+  height: 25px;
+  border-radius: 4px;
+  padding: 2px;
+  font-size: 16px;
+}
+.add-state .status {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+  flex-wrap: wrap;
+}
+.add-state .status .status-item {
+  min-width: 20%;
+  padding: 8px;
+  border-radius: 8px;
+  border: 2px solid;
+}
+.add-state .status .status-item .delete {
+  background-color: red;
+}/*# sourceMappingURL=state.css.map */

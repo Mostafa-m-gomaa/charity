@@ -17,7 +17,7 @@ const Initiatives = () => {
     const [initId,setInitId]=useState(0)
     const [refresh,setRefresh]=useState(false)
     const [keys, setKeys] = useState([
-      "title","desc","problem","budget","image","google_sheet_link","strategy_type"
+      "title","desc","problem","budget","image","strategy_type"
     ])
 
     const deleteCateg =()=>{
@@ -123,7 +123,7 @@ const Initiatives = () => {
          <div></div>
          <div></div>
        <div className="links-list">
-        <Link to={`/initiative`}> تعديل</Link>
+        <Link to={`/mobadra/${item.id}`}> الاطلاع</Link>
         <button onClick={()=>deleteButton(item.id)}>حذف</button>
        </div>
        </div>

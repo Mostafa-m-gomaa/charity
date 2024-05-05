@@ -1,0 +1,43 @@
+.add-state{
+    width: 100%;
+    margin: 100px 0;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    form{
+     
+        display: flex;
+        align-items: center;
+        input{
+            width: 40%;
+            height: 25px;
+            border-radius: 4px;
+            padding: 2px;
+            font-size: 16px;
+
+        }
+        select{
+            height: 25px;
+            border-radius: 4px;
+            padding: 2px;
+            font-size: 16px;
+
+        }
+    }
+    .status{
+        display: flex;
+        justify-content: center;
+        gap: 5px;
+        flex-wrap: wrap;
+        .status-item{
+            min-width: 20%;
+            padding: 8px;
+            border-radius: 8px;
+border: 2px solid;
+.delete{
+    background-color: red;
+}
+        }
+    }
+}

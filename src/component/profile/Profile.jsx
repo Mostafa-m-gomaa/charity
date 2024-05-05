@@ -18,17 +18,294 @@ import { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend, Resp
 const Profile = ({data , initiatives , show}) => {
 const {route , setLoader}=useContext(AppContext)
 
+const chartRef = useRef(null);
 
+  // const exportReport =  () => {
+  //   setLoader(true)
+
+  //   html2canvas(document.getElementById('element')).then(canvas => {
+  //     const canvas = chartRef.current.canvas;
+  //     const imageData = canvas.toDataURL('image/png');
+  //     const doc = new jsPDF({
+  //       orientation: 'landscape', // 'portrait' or 'landscape' orientation
+  //       unit: 'mm', // Measurement unit (millimeters)
+  //       format: [285.75 , 508 ]
+  //     });
+      
+     
+  //     doc.addFileToVFS('alfont_com_arial-1.ttf', font);
+  //     doc.addFont('alfont_com_arial-1.ttf', 'alfont_com_arial-1', 'normal');
+  //     doc.setFont("alfont_com_arial-1");
+
+
+ 
+  //     const center = (nas)=>{
+  //       const pageWidth = doc.internal.pageSize.getWidth();
+  //       const text = nas;
+  //       const txtWidth = doc.getTextWidth(text);
+  //       const xPos = (pageWidth / 2) - (txtWidth / 2); 
+  //       return xPos
+  //     }
+  //     const centerImg = (imageWidth)=>{
+  //       const pageWidth = doc.internal.pageSize.getWidth();
+  //       const startX = (pageWidth - imageWidth) / 2;
+  //       return startX
+  //     }
+  //     const text = `${data.title}`;
+  //     doc.addImage(border, 'JPEG',0 ,0 ,doc.internal.pageSize.getWidth() ,doc.internal.pageSize.getHeight());
+  //     doc.setFontSize(30);
+  //     doc.text("تقرير للهدف", center("تقرير للهدف"), 30);
+  //     doc.setFontSize(50);
+  //     doc.text(text, center(text), 55);
+  //     doc.setFontSize(30);
+  //     doc.text("اسم الجمعية", center("اسم الجمعية"), 75);
+  //     doc.setFontSize(50);
+  //     doc.text(`${sessionStorage.getItem("name")}`, center(sessionStorage.getItem("name")), 95);
+  //     doc.addImage(`${route}/storage/${sessionStorage.getItem("logo")}`, 'JPEG', centerImg(120), 120, 120, 80);
+  //     const pageWidth = doc.internal.pageSize.getWidth();
+  //     const margin = 20; // Set a margin for the text
+  //     const maxWidth = pageWidth -5; // Calculate the maximum width of the text
+  //     const lineHeight = 10; // Set the line height
+  //      initiatives.forEach((obj, index) => {
+  //       let lines = doc.splitTextToSize(obj.desc, pageWidth);
+  //       let problemLines = doc.splitTextToSize(obj.problem, pageWidth);
+  //       let yPos = 70;
+  //       let pPos = yPos +20 + lines.length * 10;
+  //       doc.addPage();
+  //       doc.addImage(border, 'JPEG',0 ,0 ,doc.internal.pageSize.getWidth() ,doc.internal.pageSize.getHeight());
+  //       doc.addImage(`${route}/storage/${sessionStorage.getItem("logo")}`, 'JPEG', 10, 10, 30, 30);
+  //       doc.setFontSize(30);
+  //       doc.text(`مبادرة`, center("مبادره"), 35);
+  //       doc.setFontSize(40);
+  //       doc.text(`${obj.title}`, center(obj.title), 55);
+  //       // doc.setFontSize(20);
+  //       // doc.text(`وصف المبادره`, center("وصف المبادره"), 75);
+  //       doc.setFontSize(20);
+  //       // doc.text(`${obj.desc}`, center(obj.desc), 95);
+  //       lines.forEach((line) => {
+      
+  //         if (yPos > doc.internal.pageSize.getHeight() - 10) { 
+  //             doc.addPage();
+  //             doc.addImage(border, 'JPEG',0 ,0 ,doc.internal.pageSize.getWidth() ,doc.internal.pageSize.getHeight());
+  //             doc.addImage(`${route}/storage/${sessionStorage.getItem("logo")}`, 'JPEG', 10, 10, 30, 30);
+  //             yPos = 25;
+  //         }
+  
+  //         // Add the text line and move to next line position
+  //         doc.text(line, center(line), yPos);
+  //         yPos += lineHeight;
+  //     });
+  //     doc.text(`المشكله`, center("المشكله"), pPos-10);
+  //       problemLines.forEach((line) => {
+      
+  //         if (yPos > doc.internal.pageSize.getHeight() - 20) { 
+  //             doc.addPage();
+  //             doc.addImage(border, 'JPEG',0 ,0 ,doc.internal.pageSize.getWidth() ,doc.internal.pageSize.getHeight());
+  //             doc.addImage(`${route}/storage/${sessionStorage.getItem("logo")}`, 'JPEG', 10, 10, 30, 30);
+  //             yPos = 25;
+  //         }
+  
+  //         // Add the text line and move to next line position
+  //         doc.text(line, center(line), pPos);
+  //         yPos += lineHeight;
+  //     });
+  //     doc.addPage()
+  //     doc.addImage(border, 'JPEG',0 ,0 ,doc.internal.pageSize.getWidth() ,doc.internal.pageSize.getHeight());
+  //     doc.addImage(`${route}/storage/${sessionStorage.getItem("logo")}`, 'JPEG', 10, 10, 30, 30);
+  //     doc.setFontSize(20);
+  //     if(obj.budget){
+  //       doc.text(`الميزانية`, center("الميزانية"), 20);
+  //       doc.setFontSize(30);
+  //       doc.text(`${obj.budget}`, center(`${obj.budget}`), 40);
+  //     }
+  //     if(obj.plan){
+  //       doc.setFontSize(35);
+  //       doc.text(`خطة العمل`, center("خطة العمل"), 60);
+  //       obj.plan.forEach((action, index) => {
+  //               doc.autoTable({
+  //           html: `#plan${index}`,
+  //           styles: {
+  //             font: 'alfont_com_arial-1', // Set the font to the Arabic font
+  //             fontSize: 13, // Adjust the font size as needed
+  //             valign: 'middle', // Center vertically
+  //             halign: 'center', // Center horizontally
+  //           },
+  //           theme:"grid",
+  //           startY: 80
+  //         });
+  //       });
+  //     }
+  //     if(obj.target){
+  //       doc.addPage()
+  //       doc.addImage(border, 'JPEG',0 ,0 ,doc.internal.pageSize.getWidth() ,doc.internal.pageSize.getHeight());
+  //       doc.addImage(`${route}/storage/${sessionStorage.getItem("logo")}`, 'JPEG', 10, 10, 30, 30);
+  //       doc.setFontSize(35);
+  //       doc.text(`ارتباط باهداف الوطنية`, center("ارتباط باهداف الوطنية"), 30);
+  //       doc.autoTable({
+  //         html: `#target${index}`,
+  //         styles: {
+  //           font: 'alfont_com_arial-1', // Set the font to the Arabic font
+  //           fontSize: 13, // Adjust the font size as needed
+  //           valign: 'middle', // Center vertically
+  //           halign: 'center', // Center horizontally
+  //         },
+  //         theme:"grid",
+  //         startY: 50
+  //       });
+  //       doc.text(`ارتباط بأهداف التنمية المستدامة `, center("ارتباط بأهداف التنمية المستدامة "), 100);
+  //       doc.autoTable({
+  //         html: `#targetG${index}`,
+  //         styles: {
+  //           font: 'alfont_com_arial-1', // Set the font to the Arabic font
+  //           fontSize: 13, // Adjust the font size as needed
+  //           valign: 'middle', // Center vertically
+  //           halign: 'center', // Center horizontally
+  //         },
+  //         theme:"grid",
+  //         startY: 125
+  //       });
+  //     }
+  //     if(obj.jsutifications){
+  //       doc.addPage()
+  //       doc.addImage(border, 'JPEG',0 ,0 ,doc.internal.pageSize.getWidth() ,doc.internal.pageSize.getHeight());
+  //       doc.addImage(`${route}/storage/${sessionStorage.getItem("logo")}`, 'JPEG', 10, 10, 30, 30);
+  //       doc.setFontSize(35);
+  //       doc.text(`المسوغات`, center("المسوغات"), 30);
+  //       obj.jsutifications.forEach((action, index) => {
+  //               doc.autoTable({
+  //           html: `#just${index}`,
+  //           styles: {
+  //             font: 'alfont_com_arial-1', // Set the font to the Arabic font
+  //             fontSize: 13, // Adjust the font size as needed
+  //             valign: 'middle', // Center vertically
+  //             halign: 'center', // Center horizontally
+  //           },
+  //           theme:"grid",
+  //           startY: 50
+  //         });
+  //       });
+  //     }
+  //     if(obj.strategy1){
+  //       doc.addPage()
+  //       doc.addImage(border, 'JPEG',0 ,0 ,doc.internal.pageSize.getWidth() ,doc.internal.pageSize.getHeight());
+  //       doc.addImage(`${route}/storage/${sessionStorage.getItem("logo")}`, 'JPEG', 10, 10, 30, 30);
+  //       doc.setFontSize(35);
+  //       doc.text(`الأبعاد الخمسه`, center("الأبعاد الخمسه"), 30);
+  //       obj.strategy1.forEach((action, index) => {
+  //               doc.autoTable({
+  //           html: `#strat${index}`,
+  //           styles: {
+  //             font: 'alfont_com_arial-1', // Set the font to the Arabic font
+  //             fontSize: 13, // Adjust the font size as needed
+  //             valign: 'middle', // Center vertically
+  //             halign: 'center', // Center horizontally
+  //           },
+  //           theme:"grid",
+  //           startY: 50
+  //         });
+  //       });
+  //     }
+  //     if(obj.output && obj.output.length > 0){
+  //       doc.addPage()
+  //       doc.addImage(border, 'JPEG',0 ,0 ,doc.internal.pageSize.getWidth() ,doc.internal.pageSize.getHeight());
+  //       doc.addImage(`${route}/storage/${sessionStorage.getItem("logo")}`, 'JPEG', 10, 10, 30, 30);
+  //       doc.setFontSize(35);
+  //       doc.text(`المخرجات`, center("المخرجات"), 30);
+  //       doc.autoTable({
+  //         html: `#out${index}`,
+  //         styles: {
+  //           font: 'alfont_com_arial-1', // Set the font to the Arabic font
+  //           fontSize: 13, // Adjust the font size as needed
+  //           valign: 'middle', // Center vertically
+  //           halign: 'center', // Center horizontally
+  //         },
+  //         theme:"grid",
+  //         startY: 50
+  //       });
+   
+  //     }
+
+  //     if(obj.entries){
+   
+  //       doc.addPage()
+  //       doc.addImage(border, 'JPEG',0 ,0 ,doc.internal.pageSize.getWidth() ,doc.internal.pageSize.getHeight());
+  //       doc.addImage(`${route}/storage/${sessionStorage.getItem("logo")}`, 'JPEG', 10, 10, 30, 30);
+  //       doc.setFontSize(35);
+  //       doc.text(`نظرية التغيير`, center("نظرية التغيير"), 30);
+  //       doc.text(`المدخلات`, center("المدخلات"), 50);
+  //       doc.autoTable({
+  //         html: `#entry${index}`,
+  //         styles: {
+  //           font: 'alfont_com_arial-1', // Set the font to the Arabic font
+  //           fontSize: 13, // Adjust the font size as needed
+  //           valign: 'middle', // Center vertically
+  //           halign: 'center', // Center horizontally
+  //         },
+  //         theme:"grid",
+  //         startY: 70
+  //       });
+
+  //       doc.addPage()
+  //       doc.addImage(border, 'JPEG',0 ,0 ,doc.internal.pageSize.getWidth() ,doc.internal.pageSize.getHeight());
+  //       doc.addImage(`${route}/storage/${sessionStorage.getItem("logo")}`, 'JPEG', 10, 10, 30, 30);
+  //       doc.setFontSize(35);
+  //       doc.text(`نظرية التغيير`, center("نظرية التغيير"), 30);
+  //       doc.text(`الأثر`, center("الأثر"), 50);
+     
+  //       doc.autoTable({
+  //         html: `#impact${index}`,
+  //         styles: {
+  //           font: 'alfont_com_arial-1', // Set the font to the Arabic font
+  //           fontSize: 13, // Adjust the font size as needed
+  //           valign: 'middle', // Center vertically
+  //           halign: 'center', // Center horizontally
+  //         },
+  //         theme:"grid",
+  //         startY: 70
+  //       });
+
+  //       doc.addPage()
+  //       doc.addImage(border, 'JPEG',0 ,0 ,doc.internal.pageSize.getWidth() ,doc.internal.pageSize.getHeight());
+  //       doc.addImage(`${route}/storage/${sessionStorage.getItem("logo")}`, 'JPEG', 10, 10, 30, 30);
+  //       doc.setFontSize(35);
+  //       doc.text(`نظرية التغيير`, center("نظرية التغيير"), 30);
+  //       doc.text(`النشاطات`, center("النشاطات"), 50);
+  //       doc.autoTable({
+  //         html: `#active${index}`,
+  //         styles: {
+  //           font: 'alfont_com_arial-1', // Set the font to the Arabic font
+  //           fontSize: 13, // Adjust the font size as needed
+  //           valign: 'middle', // Center vertically
+  //           halign: 'center', // Center horizontally
+  //         },
+  //         theme:"grid",
+  //         startY: 70
+  //       });
+  // //       obj.activities.forEach((action, index) => {
+ 
+  // // });
+  //     }
+    
+      
+    
+  //   });
+      
+   
+     
+ 
+  //      doc.save("mypddf.pdf");
+  //      setLoader(false)
+ 
+  //   });
+    
+  // };
 
   const exportReport =  () => {
     setLoader(true)
-    html2canvas(document.getElementById('element')).then(canvas => {
-      const screenshotDataUrl = canvas.toDataURL();
-      const screenshotImage = new Image();
-      screenshotImage.src = screenshotDataUrl;
-   
 
 
+      // const canvas = chartRef.current.canvas;
+      // const imageData = canvas.toDataURL('image/png');
       const doc = new jsPDF({
         orientation: 'landscape', // 'portrait' or 'landscape' orientation
         unit: 'mm', // Measurement unit (millimeters)
@@ -62,6 +339,7 @@ const {route , setLoader}=useContext(AppContext)
       doc.text(text, center(text), 55);
       doc.setFontSize(30);
       doc.text("اسم الجمعية", center("اسم الجمعية"), 75);
+
       doc.setFontSize(50);
       doc.text(`${sessionStorage.getItem("name")}`, center(sessionStorage.getItem("name")), 95);
       doc.addImage(`${route}/storage/${sessionStorage.getItem("logo")}`, 'JPEG', centerImg(120), 120, 120, 80);
@@ -299,10 +577,9 @@ const {route , setLoader}=useContext(AppContext)
        doc.save("mypddf.pdf");
        setLoader(false)
  
-    });
+    ;
     
   };
-
 
 
   
@@ -310,8 +587,8 @@ const {route , setLoader}=useContext(AppContext)
   
 
   return (
-    <div className="profile" id='element'>      
-    <div className="tit">
+    <div className="profile" id='element' >      
+    <div className="tit" ref={chartRef} >
       التقرير جاهز يمكنك تحميله الأن
     </div>
       <button className='download'  onClick={exportReport}>تحميل</button>
@@ -320,7 +597,7 @@ const {route , setLoader}=useContext(AppContext)
       {initiatives.map((item ,index) => (
         <div className="cont">
      {item.plan ?
-     <table style={{ width: '100%', borderCollapse: 'collapse', border: '1px solid black', display :"none" }} id={`plan${index}`}>
+     <table  style={{ width: '100%', borderCollapse: 'collapse', border: '1px solid black', display :"none" }} id={`plan${index}`}>
      <thead>
        <tr>
          <th style={{ border: '1px solid black', padding: '8px', backgroundColor: '#f2f2f2' }}>البند</th>

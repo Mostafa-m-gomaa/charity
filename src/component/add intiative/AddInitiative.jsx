@@ -1,6 +1,6 @@
 import React from 'react'
 import './init.css'
-import { useState ,useContext } from 'react';
+import { useState ,useContext , useEffect } from 'react';
 import { AppContext } from '../../App';
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -15,12 +15,13 @@ const AddInitiative = () => {
   const mostadama =["القضاء على الفقر" ,"القضاء التام على الجوع" , "الصحة الجيدة والرفاه" , "التعليم الجيد" , "المساواة بين الجنسين" ,"المياه النظيفة والنظافة الصحية" ,"طاقة نظيفة وبأسعار معقولة" , 
 "العمل اللائق ونمو الاقتصاد" , "الصناعة والابتكار والهياكل الأساسية" , "الحد من أوجه عدم المساواة" , "مدن ومجتمعات محلية مستدامة" , "الإنتاج والإستهلاك المستدام" , "العمل المناخي" , "الحياة تحت الماء" , "الحياة في البر" , " السلام والعدل والمؤسسات القوية" , "الشركات من أجل الأهداف"  ]
 
-const watanya1=["  تعزيز القيم الإسلامية والهوية الوطنية" ,"تمكين حياة عامرة وصحية" , "تنمية وتنويع الاقتصاد" , "زيادة معدلات التوظيف" , "تعزي زفاعلية الحكومة" , "تمكين المسؤولية الاجتماعية"]
-const watanya2=["  تعزيز القيم الإسلامية" ,"  خدمة المزيد من ضيوف الرحمن على أكمل وجه  " , " تعزيز الهوية الوطنية" ]
-const watanya3=["   تعزيز قيم الوسطية والتسامح " ,"  تعزيز قيم الإتقان والأنضباط " , "  تعزيز قيم العدالة والشفافية"  , " تعزيز قيم العزيمة والمثابرة"]
+  const [watanya1,setWatanya1]=useState([])
+  const [watanya2,setWatanya2]=useState([])
+  const [watanya3,setWatanya3]=useState([])
+
     const {route ,setLoader ,setLogin}=useContext(AppContext)
         const [formData, setFormData] = useState([
-          { output_title: '', output_desc: '', calc_way: '', target: '' },
+          { output_title: '', output_desc: '', calc_way: '', target: '' ,achieved_targets:""},
         ]);
         const [inputsData, setInputsData] = useState([
           { entry : '' , entry_desc : ''}
@@ -121,7 +122,7 @@ const watanya3=["   تعزيز قيم الوسطية والتسامح " ,"  تع
         };
       
         const handleAddField = () => {
-          setFormData([...formData, { output_title: '', output_desc: '', calc_way: '', target: '' }]);
+          setFormData([...formData, { output_title: '', output_desc: '', calc_way: '', target: '' ,achieved_targets:"" }]);
         };
         const handleAddWorkPlanField = () => {
           setWorkPlan([...workPlan, { band: '',achievement_period: '', cost: ''}]);
@@ -182,7 +183,6 @@ const watanya3=["   تعزيز قيم الوسطية والتسامح " ,"  تع
             form.append('problem', problem);
             form.append('budget', budget);
             form.append('image', image);
-            form.append('google_sheet_link', googleLink);
             form.append('national_goal',nationalGoal);
             form.append('stage1', stage1);
             form.append('stage2', stage2);
@@ -232,6 +232,7 @@ const watanya3=["   تعزيز قيم الوسطية والتسامح " ,"  تع
           console.log(response)
           toast.success("تمت الأضافة")
           setRefresh(!refresh)
+          history(`/initiative/${id}`)
               } else {
                 console.log(response)
                 toast.error("هناك خطأ")
@@ -245,12 +246,75 @@ const watanya3=["   تعزيز قيم الوسطية والتسامح " ,"  تع
 
 
             
-         
+         const [nationalGoals, setNationalGoals] = useState([]);
 
 
 
         
-       
+          useEffect(() => {
+            fetch(`${route}/api/nationalGoals` ,{
+                headers :{
+                    "Authorization" :`Bearer ${sessionStorage.getItem("token")}`
+                }
+            })
+                .then(res => res.json())
+                .then(data => {
+                  
+                    if(data.data){
+                        setNationalGoals(data.data)
+                    }
+                });
+        }, []);
+
+        const nationalGoalsChange =(id,title)=>{
+          setNationalGoal(title)
+      
+          fetch(`${route}/api/nationalGoals/${id}` ,{
+            headers :{
+                "Authorization" :`Bearer ${sessionStorage.getItem("token")}`
+            }
+        })
+            .then(res => res.json())
+            .then(data => {
+             
+                if(data.data){
+           setWatanya1(data.data.stages)
+                }
+            });
+        }
+          
+        const stageOneChange =(id,title)=>{
+          setStage1(title)
+        
+          fetch(`${route}/api/stage1/${id}` ,{
+            headers :{
+                "Authorization" :`Bearer ${sessionStorage.getItem("token")}`
+            }
+        })
+            .then(res => res.json())
+            .then(data => {
+              
+                if(data.data){
+           setWatanya2(data.data.stages)
+                }
+            });
+        }
+        const stageTwoChange =(id,title)=>{
+          setStage2(title)
+          console.log(title)
+          fetch(`${route}/api/stage2/${id}` ,{
+            headers :{
+                "Authorization" :`Bearer ${sessionStorage.getItem("token")}`
+            }
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                if(data.data){
+           setWatanya3(data.data.stages)
+                }
+            });
+        }
           
             
        
@@ -278,32 +342,34 @@ const watanya3=["   تعزيز قيم الوسطية والتسامح " ,"  تع
                <div className='relational'>
                 <label htmlFor="">
                 ارتباط باهداف الوطنية 
-                <select name="" id="" onChange={(e)=>setNationalGoal(e.target.value)}>
-                    <option value="">اختر</option>
-                    <option value="هدف الرؤية المملكة 2030">هدف الرؤية المملكة 2030</option>
-              
-                </select>
+                <select name="" id="" onChange={(e) => nationalGoalsChange(e.target.value, e.target.selectedOptions[0].text)}>
+    <option value="">اختر</option>
+    {nationalGoals.map((goal) => {
+        return (
+            <option key={goal.id} value={goal.id}>{goal.title}</option>
+        );
+    })}
+</select>
+
                 </label>
                 <label htmlFor="">
                 المرحلة الأولي
-                <select name="" id="" onChange={(e)=>setStage1(e.target.value)}>
-                    <option value="fewfew">اختر</option>
-            {watanya1.map((item,index)=>{
-                return(
-                    <option key={index} value={item}>{item}</option>
-                )
-            })}
-
-            
-                </select>
+                <select name="" id="" onChange={(e) => stageOneChange(e.target.value, e.target.selectedOptions[0].text)}>
+    <option value="">اختر</option>
+    {watanya1.map((goal) => {
+        return (
+            <option key={goal.id} value={goal.id}>{goal.title}</option>
+        );
+    })}
+</select>
                 </label>
                 <label htmlFor="">
              المرحلة الثانيه
-                <select name="" id="" onChange={(e)=>setStage2(e.target.value)}>
+                <select name="" id="" onChange={(e)=>stageTwoChange(e.target.value, e.target.selectedOptions[0].text)}>
                 <option value="fewfew">اختر</option>
                     {watanya2.map((item,index)=>{
                         return(
-                            <option key={index} value={item}>{item}</option>
+                            <option key={index} value={item.id}>{item.title}</option>
                         )
                     })}
                 </select>
@@ -314,7 +380,7 @@ const watanya3=["   تعزيز قيم الوسطية والتسامح " ,"  تع
                     {watanya3.map((item,index)=>{
 
                         return(
-                            <option key={index} value={item}>{item}</option>
+                            <option key={index} value={item.title}>{item.title}</option>
                         ) 
                     }
                     )}
@@ -379,6 +445,15 @@ const watanya3=["   تعزيز قيم الوسطية والتسامح " ,"  تع
               placeholder="الهدف رقما"
               value={data.goal}
               onChange={(e) => handleInputChange(index, 'target', e.target.value)}
+            />
+          </label>
+          <label>
+            الهدف المحقق
+            <input
+              type="text"
+              placeholder="الهدف المحقق"
+          
+              onChange={(e) => handleInputChange(index, 'achieved_targets', e.target.value)}
             />
           </label>
           <div className="add" onClick={handleAddField}>
@@ -569,8 +644,7 @@ const watanya3=["   تعزيز قيم الوسطية والتسامح " ,"  تع
 <div>صورة للمبادرة</div>
 <input type="file" className='file'  onChange={handleImageChange}  />
 
-<div>رابط المصدر</div>
-<input type="text" onChange={(e)=>setGoogleLink(e.target.value)} placeholder='بيانات قوقل google sheet' />
+
 
   
        

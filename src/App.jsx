@@ -13,6 +13,7 @@ import AddGoal from "./component/addGoal/AddGoal";
 import AddInitiative from "./component/add intiative/AddInitiative";
 import Initiatives from "./component/initiatives/Initiatives";
 import Report from "./component/report/Report";
+import Mobadra from "./component/mobadra/Mobadra";
 export const AppContext = createContext();
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
   const [token, setToken] = useState("");
   const [loader, setLoader] = useState(false);
   const [route, setRoute] = useState("https://api.atharplus.com");
+  const [refresh,setRefresh]=useState(false)
   useEffect(() => {
     if (localStorage.getItem("token")) {
       setToken(localStorage.getItem("token"));
@@ -35,7 +37,9 @@ function App() {
     login ,
     setLogin ,
     token ,
-    setToken}}>
+    setToken ,
+    refresh ,
+    setRefresh}}>
     <>
     <ToastContainer />
     {loader ?
@@ -52,6 +56,7 @@ function App() {
             <Route path="/add-goal" element={<AddGoal/>} />
             <Route path="/add-goal/:id" element={<AddInitiative/>} />
             <Route path="/initiative/:id" element={<Initiatives/>} />
+            <Route path="/mobadra/:id" element={<Mobadra/>} />
             <Route path="/report/:id" element={<Report/>} />
 
           </Route>

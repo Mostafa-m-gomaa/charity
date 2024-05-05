@@ -14,6 +14,7 @@ const AddGoal = () => {
     const [status, setStatus] = useState("")
     const [description, setDescription] = useState("")
     const [image, setImage] = useState("")
+    const [allStatus,setAllStatus]=useState([])
     const history =useNavigate()
 
 
@@ -75,6 +76,17 @@ const AddGoal = () => {
     }
     };
 
+    useEffect(() => {
+      fetch(`${route}/api/status`)
+          .then(res => res.json())
+          .then(data => {
+              console.log(data);
+              if(data.data){
+                  setAllStatus(data.data)
+              }
+          });
+  }, []);
+
 
 
   return (
@@ -92,10 +104,18 @@ const AddGoal = () => {
             </label>
             <label htmlFor="">
              الحالة
-              <select name="" id="" onChange={(e)=>setStatus(e.target.value)}>
+              {/* <select name="" id="" onChange={(e)=>setStatus(e.target.value)}>
                 <option value="خيرية">اختر</option>
                 <option value="خيرية">خيرية</option>
                 <option value="استثمارية">استثمارية</option>
+              </select> */}
+              <select name="" id="" onChange={(e)=>setStatus(e.target.value)}>
+                <option value="">اختر</option>
+                {allStatus.map((status,index) => {
+                    return(
+                        <option key={index} value={status.title}>{status.title}</option>
+                    )
+                })}
               </select>
             </label>
          </div>
